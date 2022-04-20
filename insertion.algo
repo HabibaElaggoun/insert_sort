@@ -1,0 +1,28 @@
+PROCEDURE tableau (t,n)
+VAR 
+ i: INTEGER;
+BEGIN
+   FOR i FROM 0 TO n-1  DO
+    read(t[i]);
+   END_FOR
+END
+
+
+ALGORITHM insert_sort (VAR arr : ARRAY_OF INTEGER)
+VAR
+    i,j,n : INTEGER;
+    temp: FLOAT;
+BEGIN
+    n:= arr.length;
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        temp:= arr[i];
+        j:= i ;
+        WHILE ((arr[j-1]>temp) and (j>=0)) DO
+
+            arr[j]:= arr[j-1];
+            j:= j-1;
+
+        END_WHILE
+        arr[j]:= temp;
+    END_FOR
+END
